@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
+  m_Version: 1
   skyType:
     m_OverrideState: 1
     m_Value: 4
@@ -194,7 +195,6 @@ MonoBehaviour:
   fogType:
     m_OverrideState: 1
     m_Value: 0
-  m_Version: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +226,25 @@ MonoBehaviour:
   m_Name: VolumetricClouds
   m_EditorClassIdentifier: 
   active: 1
+  m_Version: 3
+  localClouds:
+    m_OverrideState: 0
+    m_Value: 0
+  m_ObsoleteWindSpeed:
+    m_OverrideState: 0
+    m_Value: 1
+  m_ObsoleteOrientation:
+    m_OverrideState: 0
+    m_Value: 0
+  m_ObsoleteShapeOffsetX:
+    m_OverrideState: 0
+    m_Value: 0
+  m_ObsoleteShapeOffsetY:
+    m_OverrideState: 0
+    m_Value: 0
+  m_ObsoleteShapeOffsetZ:
+    m_OverrideState: 0
+    m_Value: 0
   enable:
     m_OverrideState: 1
     m_Value: 1
@@ -519,25 +538,6 @@ MonoBehaviour:
   shadowOpacityFallback:
     m_OverrideState: 0
     m_Value: 0
-  m_Version: 3
-  localClouds:
-    m_OverrideState: 0
-    m_Value: 0
-  m_ObsoleteWindSpeed:
-    m_OverrideState: 0
-    m_Value: 1
-  m_ObsoleteOrientation:
-    m_OverrideState: 0
-    m_Value: 0
-  m_ObsoleteShapeOffsetX:
-    m_OverrideState: 0
-    m_Value: 0
-  m_ObsoleteShapeOffsetY:
-    m_OverrideState: 0
-    m_Value: 0
-  m_ObsoleteShapeOffsetZ:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &764807421527885439
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -672,6 +672,16 @@ MonoBehaviour:
   includeSunInBaking:
     m_OverrideState: 0
     m_Value: 0
+  m_SkyVersion: 2
+  m_ObsoleteEarthPreset:
+    m_OverrideState: 0
+    m_Value: 1
+  planetaryRadius:
+    m_OverrideState: 0
+    m_Value: 6378100
+  planetCenterPosition:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: -6378100, z: 0}
   type:
     m_OverrideState: 0
     m_Value: 1
@@ -680,7 +690,7 @@ MonoBehaviour:
     m_Value: 1
   renderingMode:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   material:
     m_OverrideState: 0
     m_Value: {fileID: -876546973899608171, guid: 02532cbb810fb404db49da84f1efe41e, type: 3}
@@ -701,7 +711,7 @@ MonoBehaviour:
     m_Value: 55261.973
   aerosolDensity:
     m_OverrideState: 0
-    m_Value: 0.01192826
+    m_Value: 0.047
   aerosolTint:
     m_OverrideState: 0
     m_Value: {r: 0.9, g: 0.9, b: 0.9, a: 1}
@@ -725,7 +735,7 @@ MonoBehaviour:
     m_Value: {r: 0.4, g: 0.25, b: 0.15, a: 1}
   groundColorTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 8900000, guid: 988f7794680720a47acfcde78cf1c2e4, type: 3}
   groundEmissionTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -734,13 +744,13 @@ MonoBehaviour:
     m_Value: 1
   planetRotation:
     m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -1.72, y: 232.9, z: 17.59}
   spaceEmissionTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 8900000, guid: 988f7794680720a47acfcde78cf1c2e4, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.4
   spaceRotation:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
@@ -762,13 +772,3 @@ MonoBehaviour:
   horizonZenithShift:
     m_OverrideState: 0
     m_Value: 0
-  m_SkyVersion: 2
-  m_ObsoleteEarthPreset:
-    m_OverrideState: 0
-    m_Value: 1
-  planetaryRadius:
-    m_OverrideState: 0
-    m_Value: 6378100
-  planetCenterPosition:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: -6378100, z: 0}

@@ -151,7 +151,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
+                    "name": "2D Vector",
                     "id": "6a5c4b77-39bc-4267-9911-8b08d589926a",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
