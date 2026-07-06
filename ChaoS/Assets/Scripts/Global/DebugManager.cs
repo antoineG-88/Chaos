@@ -14,6 +14,8 @@ public class DebugManager : MonoBehaviour
     [Header("Debug Cast")]
     public Color defaultCastTestColor;
     public Color defaultCastHitColor;
+    [Header("Debug Cast")]
+    public Color defaultDebugSphereColor;
 
 
     //------------------------------------------------------------<--....______....-->
@@ -26,6 +28,11 @@ public class DebugManager : MonoBehaviour
 
     private static List<RaycastDebug> frameRaycastDebugs;
     private static List<RaycastDebug> persistentRaycastDebugs;
+
+    //------------------------------------------------------------<--....______....-->
+
+    private static List<Vector3> frameSphere;
+
 
     //------------------------------------------------------------<--....______....-->
 
@@ -44,6 +51,7 @@ public class DebugManager : MonoBehaviour
         frameLines = new List<string>();
         persistentLines = new List<string>();
         I.persisContainer.SetActive(false);
+        frameSphere = new List<Vector3>();
     }
 
     private void Update()
@@ -97,9 +105,15 @@ public class DebugManager : MonoBehaviour
 
     }
 
+    static public void DebugSphere(Vector3 position)
+    {
+        frameSphere.Add(position);
+    }
+
     static private void ClearFrameCastDebug()
     {
         frameRaycastDebugs.Clear();
+        //frameSphere.Clear();
     }
 
     #region Monitor
@@ -228,6 +242,12 @@ public class DebugManager : MonoBehaviour
                     Gizmos.color = rayDebug.hitColor;
                     Gizmos.DrawSphere(rayDebug.hitPoint, 0.05f);
                 }
+            }
+
+            foreach (Vector3 sphere in frameSphere)
+            {
+                Gizmos.color = defaultDebugSphereColor;
+                Gizmos.DrawSphere(sphere, 0.3f);
             }
 
             ClearFrameCastDebug();

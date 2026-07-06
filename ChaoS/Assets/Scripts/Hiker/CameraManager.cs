@@ -34,6 +34,7 @@ public class CameraManager : MonoBehaviour
 
     [Header("Inputs")]
     public InputActionReference aimCamInput;
+    public InputActionReference escapeInput;
     public PlayerInput playerInput;
 
     private float currentOrientationAngle;
@@ -45,11 +46,13 @@ public class CameraManager : MonoBehaviour
     private bool isLying;
     private bool isRotatingNeck;
     private Vector3 targetNeckRotation;
+    private bool isGameFocused;
 
     void Awake()
     {
         GameData.cameraManager = this;
         isRotatingNeck = true;
+        isGameFocused = true;
     }
 
     public float CamCurrentOrientation { get { return currentOrientationAngle; } }
@@ -59,6 +62,11 @@ public class CameraManager : MonoBehaviour
         UpdateCamPos();
         UpdateCameraAim();
         UpdateBobbingOffset();
+
+        if(escapeInput.action.IsPressed())
+        {
+            isGameFocused = false;
+        }
     }
 
     public void SetAim(Quaternion aimRotation)
@@ -76,17 +84,26 @@ public class CameraManager : MonoBehaviour
     private void UpdateCameraAim()
     {
         aimInputValue = aimCamInput.action.ReadValue<Vector2>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
 
         if(Application.isFocused)
         {
-            currentAimMovement = aimInputValue * camBaseSensitivity * 0.1f;
-            currentAimMovement *= playerInput.currentControlScheme == "Manette" ? camGamepadSensitivity : camMouseSensitivity;
-        }
-        else
-        {
-            currentAimMovement = Vector2.zero;
+            if(isGameFocused)
+            {
+                currentAimMovement = aimInputValue * camBaseSensitivity * 0.1f;
+                currentAimMovement *= playerInput.currentControlScheme == "Manette" ? camGamepadSensitivity : camMouseSensitivity;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                if(Input.GetMouseButtonDown(0))
+                {
+                    isGameFocused = true;
+                }
+                currentAimMovement = Vector2.zero;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
 
         //currentAimMovement.x *= Mathf.Sign(Mathf.DeltaAngle(targetAimRotation.y, currentRestOrientation)) != Mathf.Sign(currentAimMovement.x) ? restCamSensitivityRatioByOrientation.Evaluate(Mathf.Abs(Mathf.DeltaAngle(targetAimRotation.y, currentRestOrientation)) / (neckCamHorizontalMovementRange / 2f)) : 1f;

@@ -154,6 +154,42 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: Illusion
+      value: 
+      objectReference: {fileID: 3292133421767755352}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: IllusionOpeningAnimTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: IllusionOpeningAnim.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: IllusionOpeningAnim.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: IllusionOpeningAnim.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: OnIllusionClosed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: OnIllusionOpened.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: OnIllusionClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791201489134663134, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
+      propertyPath: OnIllusionOpened.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4165171401839722947, guid: 0c238dcb5b4f9ce41aa9076c93da2a5f, type: 3}
